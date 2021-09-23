@@ -545,8 +545,8 @@ Threebox.prototype = {
 			this.on('zoom', this.onZoom);
 			this.on('zoomend', this.onZoom);
 
-			// document.addEventListener('keydown', onKeyDown.bind(this), true);
-			// document.addEventListener('keyup', onKeyUp.bind(this));
+			document.addEventListener('keydown', onKeyDown.bind(this), true);
+			document.addEventListener('keyup', onKeyUp.bind(this));
 
 		});
 
