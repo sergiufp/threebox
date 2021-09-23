@@ -30,7 +30,7 @@ function LabelRenderer(map) {
 	}
 
 	this.map.on('resize', function () {
-		this.renderer.setSize(this.map.getCanvas().clientWidth, this.map.getCanvas().clientHeight);
+		this.renderer?.setSize(this.map.getCanvas().clientWidth, this.map.getCanvas().clientHeight);
 	}.bind(this));
 
 	this.state = {
@@ -42,14 +42,14 @@ function LabelRenderer(map) {
 	this.render = async function (scene, camera) {
 		this.scene = scene;
 		this.camera = camera;
-		return new Promise((resolve) => { resolve(this.renderer.render(scene, camera)) }); 
+		return new Promise((resolve) => { resolve(this.renderer.render(scene, camera)) });
 	}
 
 	//[jscastro] method to toggle Layer visibility
 	this.toggleLabels = async function (layerId, visible) {
 		return new Promise((resolve) => {
 			resolve(this.setVisibility(layerId, visible, this.scene, this.camera, this.renderer));
-		}) 
+		})
 	};
 
 	//[jscastro] method to set visibility
